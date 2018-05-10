@@ -1,0 +1,33 @@
+{
+  "name": "movie-collection-extended-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.10",
+    "angular-animate": "^1.6.10",
+    "angular-aria": "^1.6.10",
+    "angular-material": "^1.1.9",
+    "angular-messages": "^1.6.10",
+    "angular-route": "^1.6.10",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juniormince/movie-collection-extended-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juniormince/movie-collection-extended-project/issues"
+  },
+  "homepage": "https://github.com/juniormince/movie-collection-extended-project#readme"
+}
