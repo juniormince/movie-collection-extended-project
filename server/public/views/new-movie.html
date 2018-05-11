@@ -8,16 +8,14 @@
             <!-- not selected / blank option -->
             <option value="">---please select---</option>
             <!-- repeat over genres -->
-            <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.name}}</option>
+            <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.genre}}</option>
         </select>
 
         <!-- <select ng-model="vm.movie.ship_id">
-            
-            <option value="">---optional---</option>
-            
+            <option value="">-optional-</option>
             <option ng-repeat="ship in vm.ships.list" value="{{ship.id}}">{{ship.name}}</option>
         </select> -->
-        <!-- future notes: ^^^^second genre option when junction table is made -->
+        <!-- FUTURE NOTES: ^^^^second genre option when junction table is made -->
 
         <input type="date" ng-model="vm.movie.release_date" />
         <input type="number" placeholder="run time in minutes" ng-model="vm.movie.run_time" />
@@ -25,6 +23,16 @@
         <input id="btn-movieSubmit" type="submit" value="enter" />
     </form>
 </div>
+
+
+
+<div class="movieList" ng-repeat="movie in vm.collection.list">
+        <h4>{{movie.movie_name}}</h4>
+        <p>{{movie.genre}}</p>
+        <p>{{movie.run_time}}</p>
+        <p>{{movie.release_date}}</p>
+        <md-button ng-click="vm.deleteMovie(assignment.movie_id)">Delete</md-button>
+    </div>
 
 
 <!-- filter for date display on dom: {{dhsjakds | date: mm dd yyyy }} -->

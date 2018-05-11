@@ -3,7 +3,8 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 
-const newMovieRouter = require('./routes/new-movie.route');
+const movieRouter = require('./routes/movies.router');
+const genreRouter = require('./routes/genres.router');
 
 const app = express();
 const PORT = process.env.PORT | 5000;
@@ -18,7 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('server/public'));
 
 //new movie delivery to db
-app.use('/add-movie', newMovieRouter)
+app.use('/movies', movieRouter);
+app.use('/genres', genreRouter);
 
 
 //hey! listen!

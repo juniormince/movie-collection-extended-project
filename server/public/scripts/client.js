@@ -2,14 +2,6 @@ console.log('js czeck');
 
 var app = angular.module('FilmCollectionApp', ['ngRoute']);
 
-// successful test. delete later
-// app.controller('TestController', ['$http', function ($http)  {
-// console.log('angular czeck');
-// var self = this;
-
-// self.message = 'moviessss';
-// }]);
-
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         //future home page??
