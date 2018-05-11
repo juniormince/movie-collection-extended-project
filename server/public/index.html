@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <!-- angular and angular route -->
@@ -8,6 +9,9 @@
 
     <!-- client side -->
     <script src="scripts/client.js"></script>
+    <!-- <script src="scripts/controllers/home.controller.js"></script> -->
+    <script src="scripts/controllers/add-movie.controller.js"></script>
+    <script src="scripts/controllers/genre-listings.controller.js"></script>
 
     <!-- Angular Material -->
     <!-- uncomment out for future use! -->
@@ -25,23 +29,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Long Live Blockbuster</title>
 </head>
+
 <body ng-app="FilmCollectionApp">
-        <h1>welcome to imdbunk</h1>
-<div ng-controller="TestController as vm">
-    {{vm.message}}
+    <h1>welcome to imdbunk</h1>
+    <div>
 
-    <form action="">
-            <input type="text" placeholder="film name"/>
-            <input type="text" placeholder="genre"/>
-            <input type="date"/>
-            <input type="text" placeholder="run time in minutes"/>
-            <input type="text" placeholder="image url"/>
-            <input id="btn-movieSubmit" type="submit" value="enter"/>
-    </form>
+        <!-- create nav bar view -->
+
+        <ng-view></ng-view>
+
+    </div>
 
 
-</div>
-
-    
 </body>
+
 </html>

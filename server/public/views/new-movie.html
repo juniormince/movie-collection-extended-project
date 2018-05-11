@@ -1,0 +1,30 @@
+<!-- view for add movie -->
+<div class="newMovie">
+    <form ng-submit="vm.newMovie(vm.movie)">
+        <input type="text" placeholder="film name" ng-model="vm.movie.name" />
+        <!-- <input type="text" placeholder="genre" ng-model="vm.movie.genre_id" /> -->
+        <!-- future note: make a drop down for genres? figure out genre_id??  -->
+        <select ng-model="vm.movie.genre_id">
+            <!-- not selected / blank option -->
+            <option value="">---please select---</option>
+            <!-- repeat over genres -->
+            <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.name}}</option>
+        </select>
+
+        <!-- <select ng-model="vm.movie.ship_id">
+            
+            <option value="">---optional---</option>
+            
+            <option ng-repeat="ship in vm.ships.list" value="{{ship.id}}">{{ship.name}}</option>
+        </select> -->
+        <!-- future notes: ^^^^second genre option when junction table is made -->
+
+        <input type="date" ng-model="vm.movie.release_date" />
+        <input type="number" placeholder="run time in minutes" ng-model="vm.movie.run_time" />
+        <input type="text" placeholder="image url" ng-model="vm.movie.image_path" />
+        <input id="btn-movieSubmit" type="submit" value="enter" />
+    </form>
+</div>
+
+
+<!-- filter for date display on dom: {{dhsjakds | date: mm dd yyyy }} -->

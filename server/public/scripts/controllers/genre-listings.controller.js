@@ -1,0 +1,1 @@
+// controller for GET movies by genre - move function to service later

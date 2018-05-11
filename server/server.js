@@ -1,8 +1,11 @@
 // server business
-
 const express = require('express');
-const app = express();
+
 const bodyParser = require('body-parser');
+
+const newMovieRouter = require('./routes/new-movie.route');
+
+const app = express();
 const PORT = process.env.PORT | 5000;
 
 
@@ -10,13 +13,15 @@ const PORT = process.env.PORT | 5000;
 //for the app
 app.use(bodyParser.json());
 //for postman testing
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 //backend and frontend are friends
 app.use(express.static('server/public'));
 
+//new movie delivery to db
+app.use('/add-movie', newMovieRouter)
 
 
-//the people's station
+//hey! listen!
 app.listen(PORT, () => {
     console.log(`you're listening to PORT ${PORT}`);
 });
