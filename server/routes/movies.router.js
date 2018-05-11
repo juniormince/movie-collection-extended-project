@@ -20,11 +20,11 @@ router.post('/', (req, res) => {
 //GET MOVIESSSS
 router.get('/', (req, res) => {
     console.log('GET /movies');
-    const queryText = `SELECT "f"."name" AS "movie_name", 
-                              "f"."id" AS "movie_id", 
+    const queryText = `SELECT "f"."name", 
+                              "f"."id", 
                               "f"."release_date",
                               "f"."run_time",
-                              "f"."image_path" AS "movie_image",
+                              "f"."image_path",
                               "g"."genre" AS "genre"
                        FROM "film" AS "f" JOIN "genre" as "g" 
                        ON "f"."genre_id" = "g"."id";`;

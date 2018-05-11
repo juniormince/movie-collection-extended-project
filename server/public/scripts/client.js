@@ -12,10 +12,10 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'views/new-movie.html',
             controller: 'AddMovieController as vm'
         })
-        // .when('/genres', {
-        //     templateUrl: 'views/genres.html',
-        //     controller: 'GenreController as vm'
-        // })
+        .when('/', {
+            templateUrl: 'views/new-movie.html',
+            controller: 'AddMovieController as vm'
+        })
         .otherwise({
             template: '<h1>SORRY 404</h1>'
         });

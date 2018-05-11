@@ -1,13 +1,11 @@
 <!-- view for add movie -->
+
 <div class="newMovie">
     <form ng-submit="vm.newMovie(vm.movie)">
         <input type="text" placeholder="film name" ng-model="vm.movie.name" />
-        <!-- <input type="text" placeholder="genre" ng-model="vm.movie.genre_id" /> -->
-        <!-- future note: make a drop down for genres? figure out genre_id??  -->
         <select ng-model="vm.movie.genre_id">
-            <!-- not selected / blank option -->
             <option value="">---please select---</option>
-            <!-- repeat over genres -->
+            <!-- repeat over genres from db -->
             <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.genre}}</option>
         </select>
 
@@ -25,14 +23,21 @@
 </div>
 
 
+<!-- movies will appear here -->
+<div class="card" ng-repeat="movie in vm.collection.list">
+    <h4>{{movie.name}}</h4>
+    <p>{{movie.genre}}</p>
+    <p>run time: {{movie.run_time}} minutes</p>
+    <p>{{movie.release_date | date:MM-dd-yyyy}}</p>
+    <md-button ng-click="vm.deleteMovie(collection.movie_id)">Delete</md-button>
+</div>
+---------------------------------------------------------
 
-<div class="movieList" ng-repeat="movie in vm.collection.list">
-        <h4>{{movie.movie_name}}</h4>
-        <p>{{movie.genre}}</p>
-        <p>{{movie.run_time}}</p>
-        <p>{{movie.release_date}}</p>
-        <md-button ng-click="vm.deleteMovie(assignment.movie_id)">Delete</md-button>
-    </div>
+<div class="card" ng-repeat="genre in vm.genres.list">
+    <h4>{{genre.genre}}</h4>
+    <p>{{genre.all_films}}</p>
+    <md-button ng-click="vm.deleteMovie(collection.movie_id)">Delete</md-button>
+</div>
 
 
 <!-- filter for date display on dom: {{dhsjakds | date: mm dd yyyy }} -->

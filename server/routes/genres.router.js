@@ -20,12 +20,12 @@ router.post('/', (req, res) => {
 // GET GENRE ROUTE ((test. need to get selected genres/make filters on client side??))
 router.get('/', (req, res) => {
     console.log('GET /genres');
-    pool.query(`SELECT * FROM "genre";`)
+    //pool.query(`SELECT * FROM "genre";`)
 
-                // pool.query(`SELECT "g".*, count("f") as "all_films" 
-                // FROM "genre" as "g" LEFT JOIN "film" as "f" 
-                // ON "g"."id" = "f"."genre_id"
-                // GROUP BY "g"."id";`)
+    pool.query(`SELECT "g".*, count("f"."genre_id") as "all_films" 
+    FROM "genre" as "g" LEFT JOIN "film" as "f" 
+    ON "g"."id" = "f"."genre_id"
+    GROUP BY "g"."id";`)
         .then(result => {
             // console.log(result);
             res.send(result.rows);

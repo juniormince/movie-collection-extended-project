@@ -5,10 +5,10 @@ app.controller('AddMovieController', ['$http', function ($http) {
     console.log('angular czeck');
 
     var self = this;
-    //movie list
+    //movie list with genres
     self.collection = { list: [] };
     //genre list
-    self.genres = { list: '' };
+    self.genres = { list: [] };
 
     //add a new movie
     self.newMovie = function (newMovie) {
@@ -34,7 +34,7 @@ app.controller('AddMovieController', ['$http', function ($http) {
             url: '/movies',
         }).then((response) => {
             console.log('response', response);
-            self.movies.list = response.data;
+            self.collection.list = response.data;
         })
             .catch((error) => {
                 console.log('error making rent get request', error);
@@ -58,5 +58,6 @@ app.controller('AddMovieController', ['$http', function ($http) {
     }
 
     self.getGenres();
+    self.getMovies();
 
 }]);
