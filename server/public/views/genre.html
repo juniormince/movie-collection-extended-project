@@ -1,0 +1,15 @@
+<div class="genre-input">
+        <form ng-submit="vm.newGenre(vm.genre)">
+            <input type="text" placeholder="genre" ng-model="vm.genre.genre" />
+            <input id="btn-submit" type="submit" value="enter" />
+        </form>
+    </div>
+
+
+<div class="card" ng-repeat="genre in vm.genres.list">
+        <h4>{{genre.genre}}</h4>
+        <p>{{genre.all_films}}</p>
+        <button ng-click="vm.deleteGenre(genre.id)">Delete</button>
+    </div>
+
+<!-- <pre>{{vm|json}}</pre> -->

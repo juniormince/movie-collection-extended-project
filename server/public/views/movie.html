@@ -18,7 +18,7 @@
         <input type="date" ng-model="vm.movie.release_date" />
         <input type="number" placeholder="run time in minutes" ng-model="vm.movie.run_time" />
         <input type="text" placeholder="image url" ng-model="vm.movie.image_path" />
-        <input id="btn-movieSubmit" type="submit" value="enter" />
+        <input id="btn-submit" type="submit" value="enter" />
     </form>
 </div>
 
@@ -29,15 +29,9 @@
     <p>{{movie.genre}}</p>
     <p>run time: {{movie.run_time}} minutes</p>
     <p>{{movie.release_date | date:MM-dd-yyyy}}</p>
-    <md-button ng-click="vm.deleteMovie(collection.movie_id)">Delete</md-button>
+    <button ng-click="vm.deleteMovie(movie.movie_id)">Delete</button>
 </div>
----------------------------------------------------------
 
-<div class="card" ng-repeat="genre in vm.genres.list">
-    <h4>{{genre.genre}}</h4>
-    <p>{{genre.all_films}}</p>
-    <md-button ng-click="vm.deleteMovie(collection.movie_id)">Delete</md-button>
-</div>
 
 
 <!-- filter for date display on dom: {{dhsjakds | date: mm dd yyyy }} -->

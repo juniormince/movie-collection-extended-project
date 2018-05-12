@@ -37,10 +37,28 @@ app.controller('AddMovieController', ['$http', function ($http) {
             self.collection.list = response.data;
         })
             .catch((error) => {
-                console.log('error making rent get request', error);
-                alert('Something went wrong! Check the server.');
+                console.log('GET movies was NOT successful', error);
+                alert('NOPE.');
             });
     }
+
+     // delete movie
+     self.deleteMovie = function (movieId) {
+        $http({
+            method: 'DELETE',
+            url: `/movies/${movieId}`,
+        }).then((response) => {
+            self.getMovies();
+            self.getGenres();
+        })
+            .catch((error) => {
+                console.log('DELETE movies was NOT successful', error);
+                alert('NOPE.');
+            });
+    }
+
+
+
 
     //TESTING. MOVE LATER. for GET genres
     self.getGenres = function () {
@@ -52,8 +70,8 @@ app.controller('AddMovieController', ['$http', function ($http) {
             self.genres.list = response.data;
         })
             .catch((error) => {
-                console.log('error making rent get request', error);
-                alert('Something went wrong! Check the server.');
+                console.log('GET genres was NOT successful', error);
+                alert('NOPE.');
             });
     }
 

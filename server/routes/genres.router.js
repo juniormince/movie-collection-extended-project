@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
     ON "g"."id" = "f"."genre_id"
     GROUP BY "g"."id";`)
         .then(result => {
-            // console.log(result);
+            // console.log(result.rows);
             res.send(result.rows);
         })
         .catch(error => {
@@ -36,6 +36,33 @@ router.get('/', (req, res) => {
         });
 });
 
+//DELETE UNUSED GENRE
+router.delete('/:id', (req, res) => {
+    console.log('DELETE /genres', req.params);
+    const genreId = req.params.id;
+    pool.query('DELETE FROM "genre" WHERE "id" = $1;', [genreId])
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log('ROUTER ERROR DELETE GENRE', error);
+            res.sendStatus(500);
+        });
+});
+
+//DELETE MOVIESSSS
+// router.delete('/:id', (req, res) => {
+//     const movieId = req.params.id;
+//     console.log('DELETE /movies', movieId);
+//     pool.query('DELETE FROM "film" WHERE "id"=$1;', [movieId])
+//         .then((result) => {
+//             res.sendStatus(200);
+//         })
+//         .catch((error) => {
+//             console.log('ROUTER ERROR DELETE MOVIES', error);
+//             res.sendStatus(500);
+//         });
+// });
 
 
 module.exports = router;

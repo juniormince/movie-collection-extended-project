@@ -8,13 +8,13 @@ app.config(['$routeProvider', function ($routeProvider) {
         //.when('/home', {
         //    template: '<h1 id="welcome">welcome tO ONLINE MOVIE HOARDING</h1>'
         //})
-        .when('/', {
-            templateUrl: 'views/new-movie.html',
+        .when('/movies', {
+            templateUrl: 'views/movie.html',
             controller: 'AddMovieController as vm'
         })
-        .when('/', {
-            templateUrl: 'views/new-movie.html',
-            controller: 'AddMovieController as vm'
+        .when('/genres', {
+            templateUrl: 'views/genre.html',
+            controller: 'GenreController as vm'
         })
         .otherwise({
             template: '<h1>SORRY 404</h1>'
