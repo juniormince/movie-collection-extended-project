@@ -9,7 +9,7 @@
 
     <!-- client side -->
     <script src="scripts/client.js"></script>
-    <!-- <script src="scripts/controllers/home.controller.js"></script> -->
+    <script src="/scripts/services/collection.service.js"></script>
     <script src="scripts/controllers/add-movie.controller.js"></script>
     <script src="scripts/controllers/genre-listings.controller.js"></script>
 
@@ -34,7 +34,7 @@
     <h1>welcome to imdbunk</h1>
     <div>
 
-        <!-- create nav bar view -->
+        <ng-include src="'views/nav.html'"></ng-include>
 
         <ng-view></ng-view>
 

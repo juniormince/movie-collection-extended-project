@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
     console.log('GET /genres');
     //pool.query(`SELECT * FROM "genre";`)
 
-    pool.query(`SELECT "g".*, count("f"."genre_id") as "all_films" 
+    pool.query(`SELECT "g".*, count("f") as "all_films" 
     FROM "genre" as "g" LEFT JOIN "film" as "f" 
     ON "g"."id" = "f"."genre_id"
     GROUP BY "g"."id";`)
@@ -49,20 +49,5 @@ router.delete('/:id', (req, res) => {
             res.sendStatus(500);
         });
 });
-
-//DELETE MOVIESSSS
-// router.delete('/:id', (req, res) => {
-//     const movieId = req.params.id;
-//     console.log('DELETE /movies', movieId);
-//     pool.query('DELETE FROM "film" WHERE "id"=$1;', [movieId])
-//         .then((result) => {
-//             res.sendStatus(200);
-//         })
-//         .catch((error) => {
-//             console.log('ROUTER ERROR DELETE MOVIES', error);
-//             res.sendStatus(500);
-//         });
-// });
-
 
 module.exports = router;
