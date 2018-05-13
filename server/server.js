@@ -7,7 +7,7 @@ const movieRouter = require('./routes/movies.router');
 const genreRouter = require('./routes/genres.router');
 
 const app = express();
-const PORT = process.env.PORT | 5000;
+const PORT = process.env.PORT || 5000;
 
 
 
