@@ -23,6 +23,7 @@
 
 <!-- movies will appear here -->
 <div class="card" ng-repeat="movie in vm.collection.list">
+    <img class="card-img-top" ng-src="{{movie.image_path}}"/>
     <h4>{{movie.name}}</h4>
     <p>{{movie.genre}}</p>
     <p>run time: {{movie.run_time}} minutes</p>
