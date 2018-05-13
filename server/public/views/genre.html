@@ -1,17 +1,22 @@
 <!-- view for genres -->
 
 <div class="genre-input">
-        <form ng-submit="vm.newGenre(vm.genre)">
-            <input type="text" placeholder="genre" ng-model="vm.genre.genre" />
-            <input id="btn-submit" type="submit" value="enter" />
-        </form>
-    </div>
+    <form ng-submit="vm.newGenre(vm.genre)">
+        <input type="text" placeholder="genre" ng-model="vm.genre.genre" />
+        <input id="btn-submit" type="submit" value="enter" />
+    </form>
+</div>
 
-<div class="card" ng-repeat="genre in vm.genres.list">
-        <h4>{{genre.genre}}</h4>
-        <p>{{genre.all_films}}</p>
-        <button ng-click="vm.deleteGenre(genre)">Delete</button>
+<div class="card-deck justify-content-center"></div>
+    <div ng-repeat="genre in vm.genres.list">
+        <div class="card" style="width:15rem">
+            <p class="card-title">{{genre.genre}}</h4>
+            <p class="card-text">{{genre.all_films}}</p>
+            <button ng-click="vm.deleteGenre(genre)">Delete</button>
+        </div>
     </div>
+</div>
+
 <!-- future notes! add a image_path option to addGenre and SQL for genre banners?? -->
 
 <!-- <pre>{{vm|json}}</pre> -->

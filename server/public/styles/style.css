@@ -5,6 +5,7 @@ body    {
 
 .newMovie   {
     text-align: center;
+    margin: 10px;
 }
 
 .card   {
@@ -27,3 +28,11 @@ h1  {
     margin: 0 auto;
 }
 
+input   {
+    margin: 10px 10px 10px 10px;
+}
+
+.genre-input    {
+    text-align: center;
+    margin: 10px;
+}
