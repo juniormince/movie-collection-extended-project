@@ -1,3 +1,5 @@
+//hello operator how may i direct your call??
+
 console.log('js czeck');
 
 var app = angular.module('FilmCollectionApp', ['ngRoute']);
@@ -5,9 +7,9 @@ var app = angular.module('FilmCollectionApp', ['ngRoute']);
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         //future home page??
-        //.when('/home', {
-        //    template: '<h1 id="welcome">welcome tO ONLINE MOVIE HOARDING</h1>'
-        //})
+        .when('/', {
+           template: '<h1 id="welcome">welcome tO ONLINE MOVIE HOARDING</h1>'
+        })
         .when('/movies', {
             templateUrl: 'views/movie.html',
             controller: 'AddMovieController as vm'

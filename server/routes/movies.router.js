@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const pool = require('../modules/pool');
 
-//POST A NEW MOVIEEEEEE
+//POST MOVIEEEEEE
 router.post('/', (req, res) => {
     const newMovie = req.body;
     console.log(req.body);

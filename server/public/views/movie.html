@@ -1,4 +1,4 @@
-<!-- view for add movie -->
+<!-- view for movies -->
 
 <div class="newMovie">
     <form ng-submit="vm.newMovie(vm.movie)">
@@ -8,13 +8,11 @@
             <!-- repeat over genres from db -->
             <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.genre}}</option>
         </select>
-
-        <!-- <select ng-model="vm.movie.ship_id">
-            <option value="">-optional-</option>
-            <option ng-repeat="ship in vm.ships.list" value="{{ship.id}}">{{ship.name}}</option>
-        </select> -->
-        <!-- FUTURE NOTES: ^^^^second genre option when junction table is made -->
-
+        <!-- <select ng-model="vm.movie.genre_id">
+                <option value="">-please select-</option>
+                <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.genre}}</option>
+            </select> -->
+        <!-- FUTURE NOTES: ^^^^ second genre option when junction table is made -->
         <input type="date" ng-model="vm.movie.release_date" />
         <input type="number" placeholder="run time in minutes" ng-model="vm.movie.run_time" />
         <input type="text" placeholder="image url" ng-model="vm.movie.image_path" />
