@@ -1,7 +1,7 @@
 // controller for GET movies by genre - 
 //future note!! genre-listings??? weird name, rename/cleanup later
 
-app.controller('GenreController', ['CollectionService', '$http', function (CollectionService, $http) {
+app.controller('GenreController', ['CollectionService', function (CollectionService) {
     console.log('GenreController LOADED');
 
     var self = this;

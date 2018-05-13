@@ -94,6 +94,8 @@ app.service('CollectionService', ['$http', function ($http) {
     self.deleteGenre = function (genre) {
         if (genre.all_films > 0) {
             alert('hey! there are movies in there!');
+            //material fun~~~~
+            // self.confirmBox();
         } else {
             $http({
                 method: 'DELETE',
@@ -107,6 +109,23 @@ app.service('CollectionService', ['$http', function ($http) {
             });
         }
     }
+
+    //material fun~~~~
+    // self.confirmBox = function () {
+    //     $mdDialog.show(
+    //         $mdDialog.alert()
+    //             .clickOutsideToClose(true)
+    //             .title('Pew pew ship destroyed')
+    //             .textContent('Closing to the right!')
+    //             // .ariaLabel('Left to right demo')
+    //             .ok('Nice!')
+    //             // You can specify either sting with query selector
+    //             .openFrom('#left')
+    //             // or an element
+    //             .closeTo(angular.element(document.querySelector('#right')))
+    //     );
+    // };
+
 
     //load em up
     self.getGenres();
