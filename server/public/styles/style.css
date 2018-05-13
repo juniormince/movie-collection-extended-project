@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'pixeliciousregular';
+    src: url('pixelicious/pixelicious-webfont.woff2') format('woff2'),
+         url('pixelicious/pixelicious-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body    {
-    text-align: center;
     padding: 50px 50px;
 }
 
 .newMovie   {
+    font-family: 'pixeliciousregular', 'Courier New';
     text-align: center;
     margin: 10px;
 }
@@ -12,17 +21,45 @@ body    {
     padding: 10px;
     margin: 20px;
     text-align: center;
+    font-family: 'pixeliciousregular', 'Courier New';
+    box-shadow: 10px 10px 5px #b967ff;
+    border-radius: 20px;
 }
 
 .card-deck  {
-    padding: 75px;
+    padding: 50px;
 }
 
-h1  {
+.card-title {
+    font-weight: bold;
+    color: #d001a1;
+    text-shadow: 1px 1px #00fdba;
+}
+
+.card-text  {
+    font-size: 14px;
+    flex: wrap;
+}
+
+.title  {
     text-align: center;
+    font-family: 'pixeliciousregular', 'Courier New';
+    color: #00f9f2;
+    /* text-shadow: 2px 2px #b967ff; */
+    text-shadow: 3px 3px #d001a1;
+    padding: 1px 20px 1px;
+}
+
+h1:hover  {
+    text-shadow: 3px 3px #d001a1, 6px 6px 6px #c696ff;
+}
+
+button:hover  {
+    background: 3px 3px #d001a1;
 }
 
 .nav ul {
+    font-family: 'pixeliciousregular', 'Courier New';
     list-style-type: none;
     max-width: 780px;
     margin: 0 auto;
@@ -36,3 +73,11 @@ input   {
     text-align: center;
     margin: 10px;
 }
+
+option  {
+    font-family: 'pixeliciousregular', 'Courier New';
+}
+
+
+
+/* future notes: organize styling order */

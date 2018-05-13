@@ -26,7 +26,8 @@
             <img class="card-img-top" ng-src="{{movie.image_path}}" />
             <p class="card-title">{{movie.name}}</p>
             <p class="card-text">{{movie.genre}}</p>
-            <p class="card-text">run time: {{movie.run_time}} minutes</p>
+            <p class="card-text">run time: <br/>
+                {{movie.run_time}} minutes</p>
             <p class="card-text">{{movie.release_date | date:MM-dd-yyyy}}</p>
             <button ng-click="vm.deleteMovie(movie.movie_id)">Delete</button>
         </div>
