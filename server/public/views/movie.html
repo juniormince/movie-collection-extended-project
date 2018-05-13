@@ -20,11 +20,11 @@
 
 
 <!-- movies will appear here -->
-<div class="card-deck">
+<div class="card-deck justify-content-center">
     <div ng-repeat="movie in vm.collection.list">
         <div class="card" style="width:15rem">
             <img class="card-img-top" ng-src="{{movie.image_path}}" />
-            <p class="card-text">{{movie.name}}</p>
+            <p class="card-title">{{movie.name}}</p>
             <p class="card-text">{{movie.genre}}</p>
             <p class="card-text">run time: {{movie.run_time}} minutes</p>
             <p class="card-text">{{movie.release_date | date:MM-dd-yyyy}}</p>
