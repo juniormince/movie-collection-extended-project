@@ -9,7 +9,7 @@ app.controller('AddMovieController', ['CollectionService', '$http', function (Co
     self.genres = CollectionService.genres;
     self.collection = CollectionService.collection;
 
-    self.newMovie = CollectionService.newMovie;
+    self.getPoster = CollectionService.getPoster;
     self.deleteMovie = CollectionService.deleteMovie;
 
 }]);

@@ -8,6 +8,35 @@ app.service('CollectionService', ['$http', function ($http) {
     //movie list with genres
     self.collection = { list: [] };
     self.genres = { list: [] };
+    self.poster = '';
+
+    //get. that. poster!!
+    self.getPoster = function (newMovie) {
+        var baseUrl = 'https://image.tmdb.org/t/p/w500';
+        $http({
+            method: 'GET',
+            url: 'https://api.themoviedb.org/3/search/movie',
+            params: {
+                api_key: 'fd91b4a28cc5bc6ef681ff8ab4311f32',
+                query: newMovie.name,
+            }
+
+        })
+            .then(function (response) {
+                console.log('post POST was successful', response.data.results[0].poster_path);
+                self.poster = baseUrl + response.data.results[0].poster_path;
+                console.log(self.poster);
+                newMovie.image_path = self.poster;
+                console.log(newMovie.image_path);
+                self.newMovie(newMovie);
+                console.log(newMovie);
+                //future note: angular material for submission confirmation?
+            })
+            .catch(function (error) {
+                console.log('new movie POST was NOT successful', error);
+            });
+    };
+
 
     //ADD movie
     self.newMovie = function (newMovie) {
@@ -42,8 +71,8 @@ app.service('CollectionService', ['$http', function ($http) {
             });
     }
 
-     //DELETE movie
-     self.deleteMovie = function (movieId) {
+    //DELETE movie
+    self.deleteMovie = function (movieId) {
         $http({
             method: 'DELETE',
             url: `/movies/${movieId}`,

@@ -1,11 +1,10 @@
 <!-- view for movies -->
 
 <div class="newMovie">
-    <form ng-submit="vm.newMovie(vm.movie)">
+    <form ng-submit="vm.getPoster(vm.movie)">
         <input type="text" placeholder="film name" ng-model="vm.movie.name" />
         <select ng-model="vm.movie.genre_id">
             <option value="">---please select---</option>
-            <!-- repeat over genres from db -->
             <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.genre}}</option>
         </select>
         <!-- <select ng-model="vm.movie.genre_id">
@@ -15,21 +14,25 @@
         <!-- FUTURE NOTES: ^^^^ second genre option when junction table is made -->
         <input type="date" ng-model="vm.movie.release_date" />
         <input type="number" placeholder="run time in minutes" ng-model="vm.movie.run_time" />
-        <input type="text" placeholder="image url" ng-model="vm.movie.image_path" />
         <input id="btn-submit" type="submit" value="enter" />
     </form>
 </div>
 
 
 <!-- movies will appear here -->
-<div class="card" ng-repeat="movie in vm.collection.list">
-    <img class="card-img-top" ng-src="{{movie.image_path}}"/>
-    <h4>{{movie.name}}</h4>
-    <p>{{movie.genre}}</p>
-    <p>run time: {{movie.run_time}} minutes</p>
-    <p>{{movie.release_date | date:MM-dd-yyyy}}</p>
-    <button ng-click="vm.deleteMovie(movie.movie_id)">Delete</button>
+<div class="card-deck">
+    <div ng-repeat="movie in vm.collection.list">
+        <div class="card" style="width:15rem">
+            <img class="card-img-top" ng-src="{{movie.image_path}}" />
+            <p class="card-text">{{movie.name}}</p>
+            <p class="card-text">{{movie.genre}}</p>
+            <p class="card-text">run time: {{movie.run_time}} minutes</p>
+            <p class="card-text">{{movie.release_date | date:MM-dd-yyyy}}</p>
+            <button ng-click="vm.deleteMovie(movie.movie_id)">Delete</button>
+        </div>
+    </div>
 </div>
+
 
 
 
