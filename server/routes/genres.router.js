@@ -23,7 +23,8 @@ router.get('/', (req, res) => {
     //pool.query(`SELECT * FROM "genre";`)
 
     pool.query(`SELECT "g".*, count("f") as "all_films" 
-    FROM "genre" as "g" LEFT JOIN "film" as "f" 
+    FROM "genre" as "g" 
+    LEFT JOIN "film" as "f" 
     ON "g"."id" = "f"."genre_id"
     GROUP BY "g"."id";`)
         .then(result => {

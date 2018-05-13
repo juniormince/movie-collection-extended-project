@@ -1,0 +1,29 @@
+body    {
+    text-align: center;
+    padding: 50px 50px;
+}
+
+.newMovie   {
+    text-align: center;
+}
+
+.card   {
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+.card-deck  {
+    padding: 75px;
+}
+
+h1  {
+    text-align: center;
+}
+
+.nav ul {
+    list-style-type: none;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
