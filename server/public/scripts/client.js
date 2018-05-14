@@ -8,7 +8,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         //future home page??
         .when('/', {
-           template: '<h1 id="welcome">welcome tO ONLINE MOVIE HOARDING</h1>'
+           template: '<h1 class="welcome">welcome tO ONLINE MOVIE HOARDING</h1>'
         })
         .when('/movies', {
             templateUrl: 'views/movie.html',

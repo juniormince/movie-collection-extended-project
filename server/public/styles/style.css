@@ -60,6 +60,19 @@ md-card {
     padding: 20px;
 }
 
+.welcome  {
+    text-align: center;
+    justify-content: center;
+    font-family: 'pixeliciousregular', 'Courier New';
+    color: #00f9f2;
+    text-shadow: 3px 3px #d001a1;
+    padding: 20px;
+    padding-left: 375px;
+    margin: 100px;
+    border-radius: 20px;
+    width: 300px;
+}
+
 .error  {
     text-align: center;
     justify-content: center;
