@@ -1,7 +1,7 @@
 // movie controller
 
 
-app.controller('AddMovieController', ['CollectionService', '$http', '$mdDialog', function (CollectionService, $http, $mdDialog) {
+app.controller('AddMovieController', ['CollectionService', '$http', function (CollectionService, $http) {
     console.log('AddMovieController LOADED');
 
     var self = this;
