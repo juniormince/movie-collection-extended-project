@@ -1,20 +1,23 @@
 <!-- view for genres -->
+<div class="container">
+    <div class="genre-input">
+        <form ng-submit="vm.newGenre(vm.genre)">
+            <input type="text" placeholder="genre" ng-model="vm.genre.genre" />
+            <input id="btn-submit" type="submit" value="enter" />
+        </form>
+    </div>
 
-<div class="genre-input">
-    <form ng-submit="vm.newGenre(vm.genre)">
-        <input type="text" placeholder="genre" ng-model="vm.genre.genre" />
-        <input id="btn-submit" type="submit" value="enter" />
-    </form>
-</div>
-
-<!-- vv not sure why these cards load vertically and not in a horizontal/deck? vv-->
-<div class="card-deck justify-content-center"></div>
-    <div ng-repeat="genre in vm.genres.list">
-        <div class="card" style="width:15rem">
+    <!-- vv not sure why these cards load vertically and not in a horizontal/deck? vv-->
+    <div class="card-deck" layout="row" layout-wrap>
+        <md-card flex="20" flex-sm="60" ng-repeat="genre in vm.genres.list">
             <p class="card-title">{{genre.genre}}</h4>
-            <p class="card-text">{{genre.all_films}}</p>
-            <button ng-click="vm.deleteGenre(genre)">Delete</button>
-        </div>
+                <p class="card-text">{{genre.all_films}}</p>
+                <md-card-actions layout="row" layout-align="end center">
+                        <md-button class="md-raised md-warn" ng-click="vm.deleteGenre(genre)">
+                            <i class="material-icons">delete</i>
+                        </md-button>
+                    </md-card-actions>
+        </md-card>
     </div>
 </div>
 

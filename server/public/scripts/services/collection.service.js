@@ -1,6 +1,6 @@
 //welcome to movie collections SERVICE how may we help you today
 
-app.service('CollectionService', ['$http', function ($http) {
+app.service('CollectionService', ['$http', '$mdDialog', function ($http, $mdDialog) {
     console.log('CollectionService LOADED');
 
     var self = this;

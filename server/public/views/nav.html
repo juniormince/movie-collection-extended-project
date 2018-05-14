@@ -1,15 +1,22 @@
 <!--WHERE ARE WE CLICK ME TO SAFETY (nav bar) -->
-
-<div class="nav">
-    <ul>
-        <li>
-            <a ng-href="#!/">Home</a>
-        </li>
-        <li>
-            <a ng-href="#!/movies">Movies!</a>
-        </li>
-        <li>
-            <a ng-href="#!/genres">Genres!</a>
-        </li>
-    </ul>
+<div class="container">
+    <div class="nav" layout="row" layout-xs="column">
+        <ul>
+            <li>
+                <div flex class="nav-home">
+                    <a ng-href="#!/">Home</a>
+                </div>
+            </li>
+            <li>
+                <div flex class="nav-movies">
+                    <a ng-href="#!/movies">Movies!</a>
+                </div>
+            </li>
+            <li>
+                <div flex class="nav-genres">
+                    <a ng-href="#!/genres">Genres!</a>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>

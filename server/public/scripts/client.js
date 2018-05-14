@@ -2,7 +2,7 @@
 
 console.log('js czeck');
 
-var app = angular.module('FilmCollectionApp', ['ngRoute']);
+var app = angular.module('FilmCollectionApp', ['ngRoute', 'ngMaterial']);
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
@@ -19,6 +19,6 @@ app.config(['$routeProvider', function ($routeProvider) {
             controller: 'GenreController as vm'
         })
         .otherwise({
-            template: '<h1>SORRY 404</h1>'
+            template: '<h1 class="error">SORRY 404</h1>'
         });
 }]);
