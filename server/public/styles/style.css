@@ -7,8 +7,10 @@
 
 }
 
-body    {
-    padding: 50px 50px;
+.container    {
+    background: #e1e300;
+    width: 100%;
+    height: 100%;
 }
 
 .newMovie   {
@@ -17,20 +19,26 @@ body    {
     margin: 10px;
 }
 
-.card   {
-    padding: 10px;
-    margin: 20px;
+.card-deck  {
+    padding: 30px;
+    justify-content: center;
+}
+
+md-card {
+    padding: 5px;
+    margin: 10px;
     text-align: center;
     font-family: 'pixeliciousregular', 'Courier New';
-    box-shadow: 10px 10px 5px #b967ff;
     border-radius: 20px;
+    background: #fec617;
 }
 
-.card-deck  {
-    padding: 50px;
-}
+.card-img-top   {
+    border-radius: 15px;
+} 
 
 .card-title {
+    font-size: 18px;
     font-weight: bold;
     color: #d001a1;
     text-shadow: 1px 1px #00fdba;
@@ -39,6 +47,8 @@ body    {
 .card-text  {
     font-size: 14px;
     flex: wrap;
+    margin:0;
+    font-weight: bold;
 }
 
 .title  {
@@ -47,15 +57,35 @@ body    {
     color: #00f9f2;
     /* text-shadow: 2px 2px #b967ff; */
     text-shadow: 3px 3px #d001a1;
-    padding: 1px 20px 1px;
+    padding: 20px;
+}
+
+.error  {
+    text-align: center;
+    justify-content: center;
+    font-family: 'pixeliciousregular', 'Courier New';
+    color: #00f9f2;
+    text-shadow: 3px 3px #d001a1;
+    padding: 20px;
+    padding-left: 375px;
+    margin: 100px;
+    border-radius: 20px;
+    width: 300px;
 }
 
 h1:hover  {
     text-shadow: 3px 3px #d001a1, 6px 6px 6px #c696ff;
 }
 
-button:hover  {
-    background: 3px 3px #d001a1;
+md-button  {
+    margin-top: 10px;
+}
+
+.nav    {
+    width: 100%;
+    /* background: #f4243b; */
+    border-radius: 5px;
+    justify-content: center;
 }
 
 .nav ul {
@@ -65,16 +95,40 @@ button:hover  {
     margin: 0 auto;
 }
 
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    display: block;
+    padding: 20px 5px;
+    color: #00f9f2;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 2px 2px #d001a1;
+}
+
+
+.nav li a:hover {
+    text-shadow: 3px 3px #d001a1, 6px 6px 6px #c696ff;
+}
+
 input   {
     margin: 10px 10px 10px 10px;
+    font-family: 'pixeliciousregular', 'Courier New';
 }
 
 .genre-input    {
     text-align: center;
     margin: 10px;
+    font-family: 'pixeliciousregular', 'Courier New';
 }
 
-option  {
+.btn-submit  {
+    font-family: 'pixeliciousregular', 'Courier New';
+}
+
+select  {
     font-family: 'pixeliciousregular', 'Courier New';
 }
 

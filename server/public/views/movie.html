@@ -1,40 +1,41 @@
 <!-- view for movies -->
-
-<div class="newMovie">
-    <form ng-submit="vm.getPoster(vm.movie)">
-        <input type="text" placeholder="film name" ng-model="vm.movie.name" />
-        <select ng-model="vm.movie.genre_id">
-            <option value="">---please select---</option>
-            <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.genre}}</option>
-        </select>
-        <!-- <select ng-model="vm.movie.genre_id">
+<div class="container">
+    <div class="newMovie">
+        <form ng-submit="vm.getPoster(vm.movie)">
+            <input type="text" placeholder="film name" ng-model="vm.movie.name" />
+            <select ng-model="vm.movie.genre_id">
+                <option value="">---please select---</option>
+                <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.genre}}</option>
+            </select>
+            <!-- <select ng-model="vm.movie.genre_id">
                 <option value="">-please select-</option>
                 <option ng-repeat="genre in vm.genres.list" ng-value="genre.id">{{genre.genre}}</option>
             </select> -->
-        <!-- FUTURE NOTES: ^^^^ second genre option when junction table is made -->
-        <input type="date" ng-model="vm.movie.release_date" />
-        <input type="number" placeholder="run time in minutes" ng-model="vm.movie.run_time" />
-        <input id="btn-submit" type="submit" value="enter" />
-    </form>
-</div>
+            <!-- FUTURE NOTES: ^^^^ second genre option when junction table is made -->
+            <input type="date" ng-model="vm.movie.release_date" />
+            <input type="number" placeholder="run time in minutes" ng-model="vm.movie.run_time" />
+            <input id="btn-submit" type="submit" value="enter" />
+        </form>
+    </div>
 
 
-<!-- movies will appear here -->
-<div class="card-deck justify-content-center">
-    <div ng-repeat="movie in vm.collection.list">
-        <div class="card" style="width:15rem">
-            <img class="card-img-top" ng-src="{{movie.image_path}}" />
+    <!-- movies will appear here -->
+    <div class="card-deck" layout="row" layout-wrap>
+        <md-card flex="30" flex-sm="50" ng-repeat="movie in vm.collection.list">
+            <img class="card-img-top" ng-src="{{movie.image_path}}" alt="movie poster" />
             <p class="card-title">{{movie.name}}</p>
             <p class="card-text">{{movie.genre}}</p>
-            <p class="card-text">run time: <br/>
-                {{movie.run_time}} minutes</p>
+            <p class="card-text">run time:
+                <br/> {{movie.run_time}} minutes</p>
             <p class="card-text">{{movie.release_date | date:MM-dd-yyyy}}</p>
-            <button ng-click="vm.deleteMovie(movie.movie_id)">Delete</button>
-        </div>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-raised md-warn" ng-click="vm.deleteMovie(movie.movie_id)">
+                    <i class="material-icons">delete</i>
+                </md-button>
+            </md-card-actions>
+            <!-- how to keep delete button from floating when title is too long?? -->
+        </md-card>
     </div>
 </div>
-
-
-
 
 <!-- filter for date display on dom: {{dhsjakds | date: mm dd yyyy }} -->
