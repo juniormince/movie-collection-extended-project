@@ -28,11 +28,11 @@
             <p class="card-text">run time:
                 <br/> {{movie.run_time}} minutes</p>
             <p class="card-text">{{movie.release_date | date:MM-dd-yyyy}}</p>
-            <md-card-actions layout="row" layout-align="end center">
+            <md-card-footer layout="row" layout-align="end center">
                 <md-button class="md-raised md-warn" ng-click="vm.deleteMovie(movie.movie_id)">
                     <i class="material-icons">delete</i>
                 </md-button>
-            </md-card-actions>
+            </md-card-footer>
             <!-- how to keep delete button from floating when title is too long?? -->
         </md-card>
     </div>
