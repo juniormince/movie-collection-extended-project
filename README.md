@@ -6,8 +6,8 @@ a simple movie collection app build using SEAN stack.
  ## Screenshots
 
 <img src="screenshots/imdbunk.png" width="400"> \
-<img src="screenshots/movie-card.png" width="400">  
-<img src="screenshots/movie-cards-row.png" width="400"> \
+<img src="screenshots/movie-card.png" height="400">  
+<img src="screenshots/movie-cards-row.png" height="400"> \
 
  ## Technologies used:
  
