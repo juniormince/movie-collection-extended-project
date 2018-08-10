@@ -17,7 +17,7 @@ app.service('CollectionService', ['$http', '$mdDialog', function ($http, $mdDial
             method: 'GET',
             url: 'https://api.themoviedb.org/3/search/movie',
             params: {
-                api_key: 'fd91b4a28cc5bc6ef681ff8ab4311f32',
+                api_key: process.env.API_KEY,
                 query: newMovie.name,
             }
 
