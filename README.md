@@ -5,9 +5,9 @@ a simple movie collection app build using SEAN stack.
 
  ## Screenshots
 
-![landing page](screenshots/imdbunk.png "landing page") \
-![row of cards](screenshots/movie-cards-row.png "row of cards") \
-![single movie card](screenshots/movie-card.png "single movie card") \
+<img src="screenshots/imdbunk.png" width="400"> \
+<img src="screenshots/movie-card.png" width="400">  
+<img src="screenshots/movie-cards-row.png" width="400"> \
 
  ## Technologies used:
  
