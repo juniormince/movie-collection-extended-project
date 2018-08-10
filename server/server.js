@@ -3,6 +3,10 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 
+const router = require('express').Router();
+
+const pool = require('./modules/pool');
+
 const movieRouter = require('./routes/movies.router');
 const genreRouter = require('./routes/genres.router');
 
